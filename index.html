@@ -1,90 +1,285 @@
-<html>
+<html lang="en">
 <head>
-<title>Bihar Police Rwa Batch </title>  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login | Ludiflex</title>
 <style>
-  body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+*{
     margin: 0; padding: 0;
-  }
-  	/* modal popup video */	
-.modal {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  background: ghostwhite;
-  transition: all .4s;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
 }
- .modal:target {
-  visibility: visible;
-  opacity: 1; 
+.container{
+    background: url("https://st5.depositphotos.com/22224476/64399/i/450/depositphotos_643991552-stock-photo-blue-gradient-pattern-banner-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-.modal__content {
-  position: relative;
-  width: 100%;
-  background: #fff;
-}  	
- .sidebar-social {
-    margin: 0;
-    padding: 0;
+.box{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 40px 20px 20px 20px;
+    height: 620px;
+    width: 350px;
+    background-color: rgba(255, 220, 220, 0.4);
+    border-radius: 30px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+
 }
-.sidebar-social ul {
-    margin: 0;padding-bottom: 5px;
-    padding-top: 5px; padding-left: 0px;
+.box-login{
+    position: absolute;
+    width: 85%;
+    left: 27px;
+    transition: .5s ease-in-out; 
 }
-.sidebar-social li {
+.box-register{
+    position: absolute;
+    width: 85%;
+    right: -350px;
+    transition: .5s ease-in-out; 
+}
+.top-header{
     text-align: center;
-    width: 90%;
-    margin-bottom: 3px!important;
-    background-color: #fff;
-    border: 1px solid #eee;
-    display: inline-block;
-    padding: 10px; 
+    margin: 20px 0;
+}
+.top-sign {
+  text-align: center;
+}
+.input-group{
+    width: 100%;
+}
+.input-field{
+    margin: 12px 0;
+    position: relative;
+}
+.input-box{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    color: #040404;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(255,255,255,0.4) inset;
-  margin-top: 5px!important;  
+    padding: 7px 45px 0 20px;
+    background: rgba(224, 223, 223, 0.6);
+    backdrop-filter: blur(2px);
+    outline: none;
 }
-.sidebar-social span {
-  color: black; font-weight: bold;
-  font-size: 18px;padding-top: 10px;text-align: left;padding-bottom: 10px;
+.input-field label{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 15px;
+    transition: .3s ease-in-out;
 }
-.sidebar-social a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0px;
-      font-size: 14px;
-      color: #444;
-      text-decoration: none;
+.input-box:focus ~ label,.input-box:valid ~ label{
+    top: 2px;
+    font-size: 10px;
+    color: #c12828;
+    font-weight: 500;
 }
-.sidebar-social img {
-    width: 100%; min-height: 170px;
-    border: 1px solid whitesmoke;
+
+.eye-area{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+.eye-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+i{
+    position: absolute;
+    color: #444444;
+    cursor: pointer;
+}
+#eye,#eye-2{
+    opacity: 1;
+}
+#eye-slash,#eye-slash-2{
+    opacity: 0;
+}
+
+.remember{
+    display: flex;
+    font-size: 13px;
+    margin: 12px 0 30px 0;
+    color: #000;
+}
+.check{
+    margin-right: 8px;
+    width: 14px;
+}
+.input-submit{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background: #bc6202;
+    color: #fff;
+    box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.145);
+    cursor: pointer;
+    transition: .4s;
+}
+.input-submit:hover{
+    background: #db3e00;
+    box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
+}
+.forgot{
     text-align: center;
+    font-size: 13px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
-</style>
+.forgot a{
+    text-decoration: none;
+    color: red;
+}
+.alreadysign{
+  text-align: center;
+  font-size: 13px;
+  margin-top: 50px;
+}
+.alreadysign a {
+  text-decoration: none;
+ color: darkred; font-weight: bold;
+}
+
+</style>    
 </head>
-<body> 
-<div class="sidebar-social"><ul>
-<center>  
-<li><a href="#demo-modal"><img src="https://d33g7sdvsfd029.cloudfront.net/paid_course3/2023-07-06-0.5757604226247466.jpg"><span> बिहार पुलिस भर्ती  | बुद्धा बैच <!-- Bihar Police Batch--></span><button style="width: 100%;font-size: 19px;font-weight: bold;padding: 6px; background-color: darkred; border: none; color: white; border-radius: 10px;font-family: times">View Course </button></a></li>
+<body>
+    
+ <div class="container">
+    <div class="box">
+<!------------------ Login Box --------------------->
+<div class="box-login" id="login">
+<img src="/PicsArt_08-14-10.19.31.png" width="100%">
+<div class="top-header">
+<small>Login to your account</small></div>
+<div class="input-group">
+<div class="input-field">
+<input type="text" class="input-box" id="logEmail" required>
+<label for="logEmail">Email address</label></div>
+<div class="input-field">
+<input type="password" class="input-box" id="logPassword" required>
+<label for="logPassword">Password</label>
+<div class="eye-area">
+<div class="eye-box" onclick="myLogPassword()">
+<i class="fa-regular fa-eye-slash" id="eye"></i>
+<i class="fa-regular fa-eye" id="eye-slash"></i>
+</div></div>
+</div>
+<div class="remember">
+<input type="checkbox" id="formCheck" class="check">
+<label for="formCheck"> Remember Me</label></div>
+<div class="forgot">
+<a href="#">Forgot password?</a></div>                
+<div class="input-field">
+<input type="submit" class="input-submit" value="Sign In">
+</div>
+                
+<div class="alreadysign"> Don't have an account? 
+<a href="#" onclick="register()"> Create an account</a> </div>
+</div> </div>
 
-</center> 
-</ul></div>
+ <!-------- Register --------->
+<div class="box-register" id="register">
+<img src="/PicsArt_08-14-10.19.31.png" width="100%">
+<div class="top-sign">
+<small>Create new account</small>
+</div>
+<div class="input-group">
+<div class="input-field">
+<input type="text" class="input-box" id="regUser" required>
+<label for="regUser">Name</label>
+</div>
+<div class="input-field">
+  <input type="text" class="input-box" id="address" required>
+  <label for="address">Address</label>
+</div>            
+<div class="input-field">
+<input type="text" class="input-box" id="regEmail" required>
+<label for="regEmail">Email address</label>
+</div>
+<div class="input-field">
+<input type="password" class="input-box" id="regPassword" required>
+<label for="regPassword">Password</label>
+<div class="eye-area">
+<div class="eye-box" onclick="myRegPassword()">
+<i class="fa-regular fa-eye-slash" id="eye-2"></i>
+<i class="fa-regular fa-eye" id="eye-slash-2"></i>
+</div>
+</div>
+</div>
+<div class="remember">
+<input type="checkbox" id="formCheck-2" class="check">
+<label for="formCheck-2"> Remember Me</label>
+</div>
+<div class="input-field">
+<input type="submit" class="input-submit" value="Sign Up"></div>
+<div class="alreadysign">Already member? 
+<a href="#" class="login" onclick="login()">Log in</a>
+</div>
+</div></div>
 
-
-<div id="demo-modal" class="modal">
-  <div id='dialog' class="modal__content">
- <!-- THE iframe code -->
-<iframe src="https://script.google.com/macros/s/AKfycbzgfROHVd4t3_Ra1X6rVYRuVkWTSwgRdJ-bqGvkjp6123J-XZ941GcNPVILJK3BjMyW/exec" style="width: 100%; height: 100%;" frameborder="0" allow="accelerometer;encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
- </div></div>
- 
- 
+</div>
+ </div>
+<script>
+var x = document.getElementById('login');
+var y = document.getElementById('register');
+function login(){
+        x.style.left = "27px";
+        y.style.right = "-350px";
+     }
+     function register(){
+        x.style.left = "-350px";
+        y.style.right = "25px";
+     }
+   // view password codes
+function myLogPassword(){
+var a = document.getElementById('logPassword');
+var b = document.getElementById('eye');
+var c = document.getElementById('eye-slash');
+if(a.type === "password"){
+        a.type = "text"
+        b.style.opacity = "0";
+        c.style.opacity = "1";
+}else{    
+        a.type = "password"
+        b.style.opacity = "1";
+        c.style.opacity = "0";
+  }  }
+   
+   function myRegPassword(){
+var d = document.getElementById('regPassword');
+var b = document.getElementById("eye-2");
+var c = document.getElementById("eye-slash-2");
+if(d.type === "password"){
+    d.type = "text"
+    b.style.opacity = "0";
+    c.style.opacity = "1";
+}else{    
+    d.type = "password"
+    b.style.opacity = "1";
+    c.style.opacity = "0";
+} }
+</script>
 </body>
 </html>
